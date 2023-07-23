@@ -1,0 +1,18 @@
+@use '../abstract/' as abs;
+
+.right-column-container {
+    padding: 1.5em;
+
+    &>h2 {
+        font-size: 21px;
+        font-weight: map-get(abs.$font-hg-weight, hg-bold);
+        color: abs.$dark-gray-blue;
+    }
+}
+
+@media (min-width: 768px) {
+    .right-column-container {
+        width: min(50%, 350px);
+        padding: 2em;
+    }
+}

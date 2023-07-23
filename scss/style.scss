@@ -1,0 +1,40 @@
+// variables and mixins
+@use './abstract/' as abs;
+
+// components
+@use './components/button';
+@use './components/circle';
+@use './components/left-column';
+@use './components/result';
+@use './components/right-column';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: abs.$font-hanken-grotesk;
+}
+
+p {
+    font-size: abs.$body-font-paragraph;
+}
+
+@media (min-width: 768px) {
+    html {
+        @include abs.flexIt(center, center, column);
+        height: 100%;
+    }
+
+    body {
+        @include abs.flexIt(center, center);
+        margin-inline: 3em;
+    }
+
+    .outer-container {
+        @include abs.flexIt(center, center);
+        box-shadow: abs.$light-lavender 0.15em 0.15em 2em;
+        border-radius: 2em;
+        width: min(100%, 700px);
+        height: 100%;
+    }
+}

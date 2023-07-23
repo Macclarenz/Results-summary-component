@@ -1,0 +1,22 @@
+@use '../abstract/' as abs;
+
+.circle-container {
+    @include abs.flexIt(center, center, column);
+    $light-royal-blue: hsla(241, 81%, 54%, 0.75);
+    background-image: linear-gradient(0deg, abs.$persia-blue, $light-royal-blue);
+    border-radius: 50%;
+    margin-block: 2em;
+    height: 150px;
+    width: 150px;
+
+    .result {
+        font-size: 60px;
+        color: abs.$white;
+        font-weight: map-get(abs.$font-hg-weight, hg-extra-bold);
+    }
+
+    .result-out-of {
+        $light-lavender: hsla(241, 100%, 89%, 0.5);
+        color: $light-lavender;
+    }
+}

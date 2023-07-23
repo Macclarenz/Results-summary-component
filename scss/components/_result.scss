@@ -1,0 +1,77 @@
+@use '../abstract/' as abs;
+
+.result-list {
+    list-style: none;
+    padding: 1.75em 0;
+
+    @keyframes display {
+        from {
+            opacity: 0;
+        } to {
+            opacity: 1;
+        }
+    }
+
+    .result-list-item {
+        @include abs.flexIt(space-between, center);
+        animation: display 400ms ease-out;
+        background-color: abs.$pale-blue;
+        border-radius: 0.5em;
+        padding: 1em;
+
+        &:not(:first-child) {
+            margin-top: 1em;
+        }
+
+        .result-icon {
+            width: min-content;
+        }
+
+        .result-text-container {
+            @include abs.flexIt(space-between, center);
+            width: 100%;
+            margin-left: 0.5em;
+
+            .result-item-score .score {
+                color: abs.$dark-gray-blue;
+            }
+
+            .result-item-score {
+                color: abs.$light-lavender;
+            }
+        }
+
+    }
+
+    #result-list-item-1 {
+        background-color: transparentize($color: abs.$light-red, $amount: 0.90);
+        
+        .result-item {
+            color: abs.$light-red;
+        }
+    }
+
+    #result-list-item-2 {
+        background-color: transparentize($color: abs.$orange-yellow, $amount: 0.90);
+
+        .result-item {
+            color: abs.$orange-yellow;
+        }
+    }
+
+    #result-list-item-3 {
+        background-color: transparentize($color: abs.$green-teal, $amount: 0.90);
+
+        .result-item {
+            color: abs.$green-teal;
+        }
+    }
+
+    #result-list-item-4 {
+        background-color: transparentize($color: abs.$cobalt-blue, $amount: 0.90);
+
+        .result-item {
+            color: abs.$cobalt-blue;
+        }
+    }
+}
